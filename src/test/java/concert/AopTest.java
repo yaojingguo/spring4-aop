@@ -18,7 +18,7 @@ public class AopTest extends AbstractJUnit4SpringContextTests {
     assertThat(a).isNotNull();
     Performance p = applicationContext.getBean(Performance.class);
     assertThat(p).isNotNull();
-    System.out.println(p);
     p.perform();
+    assertThat(a).isNotNull();
   }
 }
