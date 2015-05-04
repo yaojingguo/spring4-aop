@@ -14,5 +14,8 @@ public class AudienceTest extends AbstractJUnit4SpringContextTests {
   public void one() {
     Audience a = (Audience) applicationContext.getBean("audience");
     System.out.println(a);
+   Performance p = applicationContext.getBean(Performance.class);
+   System.out.println(p);
+   p.perform();
   }
 }

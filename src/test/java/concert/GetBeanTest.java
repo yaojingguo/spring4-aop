@@ -8,9 +8,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import static com.google.common.truth.Truth.*;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ConcertConfig.class)
-public class AwareTest implements ApplicationContextAware {
+public class GetBeanTest implements ApplicationContextAware {
 
   private ApplicationContext ctx;
 
@@ -20,8 +22,8 @@ public class AwareTest implements ApplicationContextAware {
   }
 
   @Test
-  public void one() {
+  public void testGetBean() {
     Audience a = (Audience) ctx.getBean("audience");
-    System.out.println(a);
+    assertThat(a).isNotNull();
   }
 }
