@@ -1,5 +1,7 @@
 package concert;
 
+import static com.google.common.truth.Truth.*;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -8,14 +10,15 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ConcertConfig.class)
-public class AudienceTest extends AbstractJUnit4SpringContextTests {
+public class AopTest extends AbstractJUnit4SpringContextTests {
 
   @Test
-  public void one() {
+  public void test() {
     Audience a = (Audience) applicationContext.getBean("audience");
-    System.out.println(a);
-   Performance p = applicationContext.getBean(Performance.class);
-   System.out.println(p);
-   p.perform();
+    assertThat(a).isNotNull();
+    Performance p = applicationContext.getBean(Performance.class);
+    assertThat(p).isNotNull();
+    System.out.println(p);
+    p.perform();
   }
 }
