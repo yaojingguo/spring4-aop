@@ -1,6 +1,6 @@
 package concert;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Analyzer;
+import static com.google.common.truth.Truth.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +11,6 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static com.google.common.truth.Truth.*;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ConcertConfig.class)
 public class GetBeanTest implements ApplicationContextAware {
@@ -21,6 +19,9 @@ public class GetBeanTest implements ApplicationContextAware {
   
   @Autowired
   private Audience audience;
+  
+  @Autowired
+  private Audience a2;
 
   @Override
   public void setApplicationContext(ApplicationContext ctx) throws BeansException {
@@ -30,6 +31,7 @@ public class GetBeanTest implements ApplicationContextAware {
   @Test
   public void testAutowired() {
    assertThat(audience).isNotNull();
+   assertThat(a2).isNotNull();
   }
 
   @Test
