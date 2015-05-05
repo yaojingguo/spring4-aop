@@ -1,4 +1,4 @@
-package concert;
+package nba;
 
 import static com.google.common.truth.Truth.*;
 import nba.Fans;
