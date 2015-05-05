@@ -2,8 +2,14 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 repositories {
-  mavenLocal()
   mavenCentral()
+}
+
+
+eclipse {
+  classpath {
+    downloadSources=true
+  }
 }
 
 dependencies {

@@ -32,6 +32,7 @@ public class GetBeanTest implements ApplicationContextAware {
   public void testAutowired() {
    assertThat(audience).isNotNull();
    assertThat(a2).isNotNull();
+   assertThat(audience).isSameAs(a2);
   }
 
   @Test
