@@ -18,12 +18,12 @@ public class GameTest {
   private Fans fans;
 
   @Autowired
-  private Game game;
+  private Game g;
 
   @Test
   public void testFans() {
     assertThat(fans).isNotNull();
-    assertThat(game).isNotNull();
-    game.play();
+    assertThat(g).isNotNull();
+    g.play();
   }
 }
