@@ -13,6 +13,7 @@ public class TrackCounterTest {
 
   @Autowired
   private CompactDisc cd;
+  
   @Autowired
   private TrackCounter counter;
 
