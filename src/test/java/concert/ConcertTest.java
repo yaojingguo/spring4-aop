@@ -23,6 +23,7 @@ public class ConcertTest extends AbstractJUnit4SpringContextTests {
   public void testAudience() {
     p.perform();
     assertThat(a).isNotNull();
+    Encoreable e = (Encoreable) p;
+    e.performEncore();
   }
-  
 }
