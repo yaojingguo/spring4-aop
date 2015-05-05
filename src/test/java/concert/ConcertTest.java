@@ -10,10 +10,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = ConcertConfig.class)
-public class AopTest extends AbstractJUnit4SpringContextTests {
+public class ConcertTest extends AbstractJUnit4SpringContextTests {
 
   @Test
-  public void test() {
+  public void testAudience() {
     Audience a = (Audience) applicationContext.getBean("audience");
     assertThat(a).isNotNull();
     Performance p = applicationContext.getBean(Performance.class);
@@ -21,4 +21,6 @@ public class AopTest extends AbstractJUnit4SpringContextTests {
     p.perform();
     assertThat(a).isNotNull();
   }
+  
+
 }
